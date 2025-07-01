@@ -1,6 +1,7 @@
 import { HeroSection } from "../components/hero-section";
 import { FeaturesSection } from "../components/features-section";
 import { ContactSection } from "../components/contact-section";
+import { TestimonialsSection } from "../components/testimonials-section";
 
 export function HomePage() {
   // Smart component - contains layout logic and data
@@ -47,6 +48,33 @@ export function HomePage() {
     phone: "08123456789",
   };
 
+  const testimonialsData = [
+    {
+      id: 1,
+      customerName: "Sarah Johnson",
+      message:
+        "SEA Catering has transformed my eating habits! The meals are delicious and perfectly portioned.",
+      rating: 5,
+      createdAt: new Date("2024-01-15"),
+    },
+    {
+      id: 2,
+      customerName: "Ahmad Rahman",
+      message:
+        "Excellent service and quality. The delivery is always on time and the food stays fresh.",
+      rating: 5,
+      createdAt: new Date("2024-01-10"),
+    },
+    {
+      id: 3,
+      customerName: "Maria Santos",
+      message:
+        "Love the variety and customization options. Finally found a meal service that fits my lifestyle!",
+      rating: 4,
+      createdAt: new Date("2024-01-08"),
+    },
+  ];
+
   return (
     <div className="w-full">
       <main className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,6 +90,13 @@ export function HomePage() {
           <section className="w-full">
             <article className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               <FeaturesSection features={featuresData} />
+            </article>
+          </section>
+
+          {/* Testimonials Section */}
+          <section className="w-full">
+            <article className="w-full">
+              <TestimonialsSection testimonials={testimonialsData} />
             </article>
           </section>
 
